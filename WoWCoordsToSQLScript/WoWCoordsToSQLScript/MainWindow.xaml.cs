@@ -207,7 +207,7 @@ namespace WoWCoordsToSQLScript
 
                 componentpart = line.Split(delimiter);
                 // add it to output list
-                sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `wpguid`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+                sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
                 point++; // next position in the path
                 outputFileList.Add(sqlScript);
             }
