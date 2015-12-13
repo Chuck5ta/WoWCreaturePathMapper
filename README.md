@@ -10,7 +10,7 @@ There are two parts to this tool:
 ---------------
 Programming language:
 
-WoW Addon: LUA script
+WoW Addon: LUA script and XML
 
 Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 

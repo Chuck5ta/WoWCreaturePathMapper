@@ -23,11 +23,11 @@
         <Label Content="delimiter" HorizontalAlignment="Left" Margin="433,307,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtGMCharactersName" HorizontalAlignment="Left" Height="23" Margin="125,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" ToolTip="Enter you character's name here."/>
         <Label Content="Your character's name" HorizontalAlignment="Left" Margin="254,211,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold"/>
-        <Label Content="(for the creature__movement table)" HorizontalAlignment="Left" Margin="155,12,0,0" VerticalAlignment="Top" Width="192"/>
+        <Label Content="(for the creature__movement and creature__movement__template tables)" HorizontalAlignment="Left" Margin="56,12,0,0" VerticalAlignment="Top" Width="397"/>
         <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="20" Margin="127,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" ToolTip="GUID of the creature/NPC. Located in: creature table (field: GUID) creature__movement table (field: ID)"/>
         <Label Content="guid or entry ID of creature/NPC" HorizontalAlignment="Left" Height="29" Margin="180,240,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="txtPoint" HorizontalAlignment="Left" Height="20" Margin="127,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" ToolTip="Index of the position this set of waypoints starts from, e.g. 1 if the very first entry, 2 if the 2nd entry, 5 if the 5th entry, etc" Text="1" LostFocus="txtPoint_LostFocus"/>
-        <Label Content="point (start index in creature__movement table)" HorizontalAlignment="Left" Height="30" Margin="159,265,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="point (start index in the table)" HorizontalAlignment="Left" Height="30" Margin="159,265,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="btnSaveDefaultSettings" Content="Save As Default Settings" HorizontalAlignment="Left" Margin="176,397,0,0" VerticalAlignment="Top" Width="141" ToolTip="configSettings.txt" RenderTransformOrigin="0.5,0.5" Click="btnSaveDefaultSettings_Click">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -56,7 +56,7 @@
                 <Paragraph FontSize="20" FontWeight="Bold">How To</Paragraph>
                 <Paragraph FontSize="14">This tool and the CoordinatesRecorder WoW addon, are used to plot out the waypoints (continent level coordinates) of a path/route you wish a creature or NPC to travel in the World of Warcraft realm. Then to store the resulting list of waypoints in CSV and/or SQL script, ready to be added to the creature_movement table of the mangos database.</Paragraph>
                 <Paragraph FontSize="16" FontWeight="Bold">Required Programs/Files</Paragraph>
-                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">1) CoordinatesGrabber (WoW addon)</Paragraph>
+                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">1) CoordinatesRecorder (WoW addon)</Paragraph>
                 <Paragraph FontSize="14">The addon is used in game to aid in acquiring the waypoint/coordinates.</Paragraph>
                 <Paragraph FontSize="14">The game account must have GM rights.</Paragraph>
                 <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">2) WoWCoordsToSQLScript</Paragraph>
@@ -103,8 +103,8 @@
         <Button x:Name="btnWTF" Content="WTF!!!" HorizontalAlignment="Left" Margin="29,209,0,0" VerticalAlignment="Top" Width="45" Click="btnWTF_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="25" FontSize="10" FontWeight="Bold"/>
         <RadioButton x:Name="radGuid" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="101,237,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radGuid_Checked"/>
         <RadioButton x:Name="radEntry" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="101,253,0,0" VerticalAlignment="Top" Checked="radEntry_Checked"/>
-        <Label Content="guid" HorizontalAlignment="Left" Height="29" Margin="65,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="entry" HorizontalAlignment="Left" Height="29" Margin="62,247,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="guid" HorizontalAlignment="Left" Height="29" Margin="64,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="entry" HorizontalAlignment="Left" Height="29" Margin="61,247,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
     </Grid>
 </Window>
