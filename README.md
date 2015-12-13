@@ -1,17 +1,20 @@
 # WoWCreaturePathMapper
 This can be used for plotting the paths of creatures and NPCs for World of Warcraft private servers.
 There are two parts to this tool:
+
 1) World of Warcraft Addon: CoordinatesRecorder
+
 2) Convert to SQL tool: WoWCoordsToSQLScript
 
 ### TOOL BUILT ON/WITH
 ---------------
-Programming language: 
+Programming language:
+
 WoW Addon: LUA script
+
 Convert to SQL tool: C#
 
-IDE: Visual Studio 2013
-Notepad++
+IDE/Editors: Visual Studio 2013 and Notepad++
 
 O/S: MS Windows 7
 
