@@ -1,0 +1,26 @@
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Release\WoWCoordsToSQLScript.exe.config
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Release\WoWCoordsToSQLScript.exe
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Release\WoWCoordsToSQLScript.pdb
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.csprojResolveAssemblyReference.cache
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\MainWindow.baml
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\MainWindow.g.cs
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\App.g.cs
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript_MarkupCompile.cache
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.g.resources
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.Properties.Resources.resources
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.csproj.GenerateResource.Cache
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.exe
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.pdb
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Release\WoWCoordsToSQLScript.exe.config
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.exe
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.pdb
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Release\WoWCoordsToSQLScript.exe
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Release\WoWCoordsToSQLScript.pdb
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.csprojResolveAssemblyReference.cache
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\MainWindow.baml
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\MainWindow.g.cs
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\App.g.cs
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript_MarkupCompile.cache
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.g.resources
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.Properties.Resources.resources
+D:\DEVELOPMENT\UKC\WoWNPCPathPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Release\WoWCoordsToSQLScript.csproj.GenerateResource.Cache

@@ -1,0 +1,66 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+
+	<Script file="CoordinatesRecorder.lua" />
+	<Frame name="Frame1" parent="UIParent" toplevel="true" movable="true" enableMouse="true">
+		<Size>
+			<AbsDimension x="170" y="90" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset>
+					<AbsDimension x="374" y="-200" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Scripts>
+			<OnMouseDown>
+				this:StartMoving();
+			</OnMouseDown>
+			<OnMouseUp>
+				this:StopMovingOrSizing();
+			</OnMouseUp>
+			<OnLoad>Frame1_OnLoad();</OnLoad>
+			<OnEvent>Frame1_OnEvent();</OnEvent>
+		</Scripts>
+		<Layers>
+			<Layer>
+				<FontString name="FontString1" inherits="GameFontNormalSmall" font="Fonts\FRIZQT__.TTF" text="Chuck E's WoW Coordinates Recorder">
+					<Size x="160" y="36" />
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="5" y="-15" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Button name="Button1" inherits="UIPanelButtonTemplate" text="Record Waypoint">
+				<Size x="154" y="30" />
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="8" y="-50" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>Button1_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	
+	
+
+
+</Ui>

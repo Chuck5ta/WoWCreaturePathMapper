@@ -1,0 +1,9 @@
+﻿## Interface: 11200
+## Title: CoordinatesRecorder
+## Notes: WoW Addon Template
+## Author: Chucksta
+## Version: 1.0
+## DefaultState: Enabled
+
+CoordinatesRecorder.xml
+CoordinatesRecorder.lua

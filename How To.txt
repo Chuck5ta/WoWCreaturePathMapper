@@ -1,0 +1,48 @@
+
+
+Acquiring the Waypoints
+- install addon
+Copy the CoordinatesRecorder addon into your WoW Interface\Addons folder
+Make sure it shows up in the Addons list and in game (simple window with a button)
+- use the addon
+place the window in a suitable location for easy access - e.g. bottom right
+
+Activate Recording Of Chat
+Enter the following to enable the recording of Chat: /chatlog
+This will record evrything that goes into chat and place it (once left the game world) in the WoWChatLog.txt file within the Logs folder of the WoW installation.
+
+Walk and Record
+Walk your path and press the Record Coordinates button when you reach a point that you wish to include.
+
+Finished recording the waypoints
+Once you're done plotting the path, leave the game or logout. This will cause the creation of the WoWChatLog.txt file.
+
+Copy this file to the folder the WoWCoordinatesToSQLScript tool is.
+
+Converting the Waypoints to SQL script
+
+Configure the system
+Enter the name of the character you used to plot the path.
+Enter the GUID of the creature/NPC that these waypoints will be used for (GUID found in the creature table, or in game by selecting the creature/NPC and entering .guid in chat).
+Enter the point, which is from 1 upwards, representing the point in the list of waypoints where it will be executed, e.g. if the first of these new waypoints is the first in the database, then this value will be 1.
+If you already have some in the database, say 5, then for these new ones the value needs to be 6, as the first of these new waypoints is a continuation of what already exists in the dataabse.
+
+Grab the data
+The Grab Data button is pressed to load to data held in the WoWChatLog.txt file.
+It then retrieves the information we want: X, Y, Z, and Orientation, and outputs in to the top are of the iterface.
+
+Save As CSV file button: This saves the data in CSV format to a text file (choose your preference of delimiter - character that separates the X, Y, Z, etc fields).
+
+Convert to SQL button: This will generate SQL Scripts from the data and save it to the stated text file
+
+Save As Default Settings button: save your current/preferred settings, to be used on start up of the tool,
+
+
+ 
+
+
+
+
+
+
+

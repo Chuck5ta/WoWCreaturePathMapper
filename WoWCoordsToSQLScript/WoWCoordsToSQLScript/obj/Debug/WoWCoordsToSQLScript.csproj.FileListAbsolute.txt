@@ -1,0 +1,13 @@
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\MainWindow.baml
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\MainWindow.g.cs
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\App.g.cs
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript_MarkupCompile.cache
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript.g.resources
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript.Properties.Resources.resources
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript.csproj.GenerateResource.Cache
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Debug\WoWCoordsToSQLScript.exe.config
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Debug\WoWCoordsToSQLScript.exe
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\bin\Debug\WoWCoordsToSQLScript.pdb
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript.exe
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript.pdb
+C:\Current Projects\WoWCoordinatesPlotter\WoWCoordsToSQLScript\WoWCoordsToSQLScript\obj\Debug\WoWCoordsToSQLScript.csprojResolveAssemblyReference.cache

@@ -1,0 +1,106 @@
+﻿<Window x:Class="WoWCoordsToSQLScript.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="460" Width="524">
+    <Grid Height="430" VerticalAlignment="Top" Margin="0,0,0,-3">
+        <Button x:Name="btnGrabData" Content="Grab Data" HorizontalAlignment="Left" Margin="22,264,0,0" VerticalAlignment="Top" Width="66" Click="btnGrabData_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="47"/>
+        <Label Content="ChuckE" HorizontalAlignment="Left" Margin="5,398,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.479,0.519" Width="71" FontFamily="Comic Sans MS" FontWeight="Bold">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.16"/>
+                    <TranslateTransform X="-0.013" Y="-0.038"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="btnConvertToSql" Content="Convert To SQL" HorizontalAlignment="Left" Margin="297,364,0,0" VerticalAlignment="Top" Width="99" Click="btnConvertToSql_Click" ToolTip="Saves the file to this tool's folder"/>
+        <ListBox x:Name="lbContinentCoordinates" HorizontalAlignment="Left" Height="111" Margin="11,38,0,0" VerticalAlignment="Top" Width="486" ToolTip="Results windows"/>
+        <Label Content="WoW Continent Coords to SQL Script" HorizontalAlignment="Left" Margin="119,-4,0,0" VerticalAlignment="Top" Width="287" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="btnSaveToFile" Content="Save As CSV file" HorizontalAlignment="Left" Margin="297,302,0,0" VerticalAlignment="Top" Width="99" Click="btnSaveToFile_Click" ToolTip="Saves the file to this tool's folder"/>
+        <TextBox x:Name="txtCsvFileName" HorizontalAlignment="Left" Height="23" Margin="125,301,0,0" TextWrapping="Wrap" Text="defaultCSVFileName" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtSQLScriptFileName" HorizontalAlignment="Left" Height="23" Margin="125,363,0,0" TextWrapping="Wrap" Text="defaultSqlScriptFileName" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtDelimiterForSavedCSVFile" HorizontalAlignment="Left" Height="23" Margin="408,303,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.478" MaxLength="1" FontWeight="Bold" FontFamily="Verdana" UndoLimit="20" FontSize="14" ToolTip="Enter you choice of delimiter"/>
+        <Label Content="delimiter" HorizontalAlignment="Left" Margin="433,307,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtGMCharactersName" HorizontalAlignment="Left" Height="23" Margin="125,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" ToolTip="Enter you character's name here."/>
+        <Label Content="Your character's name" HorizontalAlignment="Left" Margin="254,211,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold"/>
+        <Label Content="(for the creature__movement table)" HorizontalAlignment="Left" Margin="155,12,0,0" VerticalAlignment="Top" Width="192"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="20" Margin="127,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" ToolTip="GUID of the creature/NPC. Located in: creature table (field: GUID) creature__movement table (field: ID)"/>
+        <Label Content="guid of creature/NPC" HorizontalAlignment="Left" Height="29" Margin="180,240,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txtPoint" HorizontalAlignment="Left" Height="20" Margin="127,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" ToolTip="Index of the position this set of waypoints starts from, e.g. 1 if the very first entry, 2 if the 2nd entry, 5 if the 5th entry, etc" Text="1" LostFocus="txtPoint_LostFocus"/>
+        <Label Content="point (start index in creature__movement table)" HorizontalAlignment="Left" Height="30" Margin="159,265,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btnSaveDefaultSettings" Content="Save As Default Settings" HorizontalAlignment="Left" Margin="176,397,0,0" VerticalAlignment="Top" Width="141" ToolTip="configSettings.txt" RenderTransformOrigin="0.5,0.5" Click="btnSaveDefaultSettings_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.252"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="txtMessagePanel" HorizontalAlignment="Left" Height="50" Margin="12,154,0,0" TextWrapping="Wrap" Text="(1) Use the WoW addon to acquire the waypoint data (GM mode and enter  /chatlog in chat to activate chat logging). (2) When finished plotting waypoints (log out of WoW!) - Copy the WoWChatLog.txt from WoW Logs to this tool's folder. (3) Enter your GM character's name, Enter GUID/id of the creature, Enter the point (1 = 1st waypoint in creature_movement table), THEN hit the Grab Data button!!!" VerticalAlignment="Top" Width="485" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="2" Background="#FFF1EFEF"/>
+        <Button x:Name="btnLoadCSVFile" Content="Load CSV file" HorizontalAlignment="Left" Margin="297,333,0,0" VerticalAlignment="Top" Width="99" ToolTip="Saves the file to this tool's folder" Click="btnLoadCSVFile_Click"/>
+        <TextBox x:Name="txtCSVFileNameToLoad" HorizontalAlignment="Left" Height="23" Margin="125,332,0,0" TextWrapping="Wrap" Text="defaultCSVFileNameToLoad" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtDelimiterForLoadedCSVFile" HorizontalAlignment="Left" Height="23" Margin="408,333,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.478" MaxLength="1" FontWeight="Bold" FontFamily="Verdana" UndoLimit="20" FontSize="14" ToolTip="Enter the delimiter used in the file to be loaded"/>
+        <Label Content="Loaded file's" HorizontalAlignment="Left" Margin="432,326,0,0" VerticalAlignment="Top"/>
+        <Label Content="delimiter" HorizontalAlignment="Left" Margin="433,338,0,0" VerticalAlignment="Top"/>
+        <Label Content="Saved file's" HorizontalAlignment="Left" Margin="433,295,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnHelpMe" Content="Help &gt;" HorizontalAlignment="Left" Margin="439,4,0,0" VerticalAlignment="Top" Width="66" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="25" Click="btnHelpMe_Click" FontWeight="Bold"/>
+        <RichTextBox x:Name="rtbHelpInformation" HorizontalAlignment="Left" Height="386" Margin="521,12,-356,0" VerticalAlignment="Top" Width="351" VerticalScrollBarVisibility="Visible">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </RichTextBox.Resources>
+            <FlowDocument>
+                <Paragraph FontSize="20" FontWeight="Bold">How To</Paragraph>
+                <Paragraph FontSize="14">This tool and the CoordinatesRecorder WoW addon, are used to plot out the waypoints (continent level coordinates) of a path/route you wish a creature or NPC to travel in the World of Warcraft realm. Then to store the resulting list of waypoints in CSV and/or SQL script, ready to be added to the creature_movement table of the mangos database.</Paragraph>
+                <Paragraph FontSize="16" FontWeight="Bold">Required Programs/Files</Paragraph>
+                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">1) CoordinatesGrabber (WoW addon)</Paragraph>
+                <Paragraph FontSize="14">The addon is used in game to aid in acquiring the waypoint/coordinates.</Paragraph>
+                <Paragraph FontSize="14">The game account must have GM rights.</Paragraph>
+                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">2) WoWCoordsToSQLScript</Paragraph>
+                <Paragraph FontSize="14">This tool - is used to retrieve the exact data (X, Y, and Z ordinates, and Orientation), save the data in CSV form, and generate SQL scripts from the data. The resulting SQL scripts can then be copy and pasted into a client, such as MySQL Workbench and executed, thus writing the data to the database.</Paragraph>
+                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">3) WoWChatLog.txt</Paragraph>
+                <Paragraph FontSize="14">This file will hold all the waypoint information, and is automaticaly created by the WoW system once the command /chatlog has been entered in chat.</Paragraph>
+                <Paragraph FontSize="14">This file is copied from the WoW installation's Logs folder, to the folder of the WoWCoordsToSQLScript tool.</Paragraph>
+                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">4) World of Warcraft client (only tested on classic, so far)</Paragraph>
+                <Paragraph FontSize="14" FontStyle="Italic" FontWeight="Bold">5) MaNGOS server - only tested on Zero, so far</Paragraph>
+                <Paragraph FontSize="16" FontWeight="Bold">Acquiring the Waypoints</Paragraph>
+                <Paragraph FontSize="14">Copy the CoordinatesRecorder addon into your WoW Interface\Addons folder.</Paragraph>
+                <Paragraph FontSize="14">Make sure it shows up in the Addons list and in game (simple window with a button)</Paragraph>
+                <Paragraph FontSize="14">When in-game, place the addon's window in a suitable location for easy access - e.g. bottom right of screen.</Paragraph>
+                <Paragraph FontSize="14" FontWeight="Bold">Activate Recording Of Chat</Paragraph>
+                <Paragraph FontSize="14">Before we continue, we need to get the WoW system to record what is sent to chat.</Paragraph>
+                <Paragraph FontSize="14">Due to restrictions placed on the WoW API and LUA, it is neccessary to use the logging of chat to acquire the waypoint information.</Paragraph>
+                <Paragraph FontSize="14">Enter /chatlog in the in game chat.</Paragraph>
+                <Paragraph FontSize="16" FontWeight="Bold">Finally, let's plot the path (record waypoints)</Paragraph>
+                <Paragraph FontSize="14">Walk your path and press the Record Coordinates button when you reach a point that you wish to include in the database's creature_movement table for your creature/NPC.</Paragraph>
+                <Paragraph FontSize="14">Your game character needs to be in GM mode.</Paragraph>
+                <Paragraph FontSize="14">This is because it uses the .gps command. Sending this to the chat and thus recording the waypoint information.</Paragraph>
+                <Paragraph FontSize="14">The addon will grab this data and retrieve the required waypoint data, then have the character say this information in chat.</Paragraph>
+                <Paragraph FontSize="14">By having the character voice the specific information, the data is easily distinguished from all other data (for the WoWCoordToSQLScript tool).</Paragraph>
+                <Paragraph FontSize="16" FontWeight="Bold">Finished recording the waypoints</Paragraph>
+                <Paragraph FontSize="14">Once you're done plotting the path, leave the game or logout. This will cause the creation of the WoWChatLog.txt file in WoW's Logs folder (e.g. World of Warcraft\Logs).</Paragraph>
+                <Paragraph FontSize="14">Copy this file to the folder where the WoWCoordinatesToSQLScript tool is.</Paragraph>
+                <Paragraph FontSize="16" FontWeight="Bold">Converting the Waypoints to SQL script</Paragraph>
+                <Paragraph FontSize="14" FontWeight="Bold">Configure the system</Paragraph>
+                <Paragraph FontSize="14">Enter the name of the character you used to plot the path.</Paragraph>
+                <Paragraph FontSize="14">Enter the GUID of the creature/NPC that these waypoints will be used for (GUID found in the creature table, or in game by selecting the creature/NPC and entering .guid in chat).</Paragraph>
+                <Paragraph FontSize="14">Enter the point, which represents the order in which the waypoints are executed in the creature_movement table. Starting from 1 and incrementing by 1 for each successive waypint entry (record), e.g. 1, 2, 3, etc.</Paragraph>
+                <Paragraph FontSize="14">If these waypoints that you are recording are the only ones for the creature/NPC thus far, you need to enter 1, as the first of these waypoints will be the first the creature/NPC needs to execute in the creature_movement table.</Paragraph>
+                <Paragraph FontSize="14">If the creature already has some entries in the creature_movement table (e.g. 5), and these new ones are to be added to the existing ones, then you need to enter 6, as the first of these new waypoints will be the 6th in the creature_movement table.</Paragraph>
+                <Paragraph FontSize="16" FontWeight="Bold">Grab the data</Paragraph>
+                <Paragraph FontSize="14">The Grab Data button will load the data held in the WoWChatLog.txt file.</Paragraph>
+                <Paragraph FontSize="14">It then retrieves the information we want: X, Y, Z, and Orientation, and will output it to the top area of the interface.</Paragraph>
+                <Paragraph FontSize="14">Save As CSV file button: This saves the data in CSV format to a text file (choose your prefered delimiter - character that separates the X, Y, Z, and Orientation fields).</Paragraph>
+                <Paragraph FontSize="14">Convert to SQL button: This will generate SQL Scripts from the data and save it to the specified text file (scripts that add records to the creature_movement table).</Paragraph>
+                <Paragraph FontSize="14">Save As Default Settings button: save your current/preferred settings, to be used on start up of the tool.</Paragraph>
+                <Paragraph FontSize="14">Enjoy :D</Paragraph>
+                <Paragraph FontSize="14">That's All Folks!</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="btnWTF" Content="WTF!!!" HorizontalAlignment="Left" Margin="29,209,0,0" VerticalAlignment="Top" Width="45" Click="btnWTF_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="25" FontSize="10" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
