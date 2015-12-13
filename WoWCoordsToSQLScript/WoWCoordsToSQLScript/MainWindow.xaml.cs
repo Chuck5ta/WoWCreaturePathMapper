@@ -38,6 +38,7 @@ namespace WoWCoordsToSQLScript
     public partial class MainWindow : Window
     {
         private bool expandHelpPanel = true;
+        private bool bGUID; // if we are using a GUID, then we are adding path data to the creature_movement table, otherwise it will be an 'entry' ID for the creature_movement_template table
         private ArrayList logileList = new ArrayList();
         private ArrayList outputFileList = new ArrayList();
 
@@ -72,6 +73,7 @@ namespace WoWCoordsToSQLScript
             txtSQLScriptFileName.Text = defaultConfigSettings.defaultSQLScriptFileName;
             txtId.Text = defaultConfigSettings.defaultCreatureGUID;
 
+            bGUID = true;
 
         }
 
@@ -207,7 +209,11 @@ namespace WoWCoordsToSQLScript
 
                 componentpart = line.Split(delimiter);
                 // add it to output list
-                sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+                if (bGUID) // creature_movement
+                    sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+                else // ENTRY - creature_movement_template
+                    sqlScript = "INSERT INTO creature_movement_template (`entry`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+
                 point++; // next position in the path
                 outputFileList.Add(sqlScript);
             }
@@ -322,6 +328,18 @@ namespace WoWCoordsToSQLScript
                 txtPoint.Text = "1"; // set to default value
                 txtMessagePanel.Text = "ERROR: Point must have a numeric value!!";
             }
+        }
+
+        private void radGuid_Checked(object sender, RoutedEventArgs e)
+        {
+            // we are to create SQL script for the creature_movement table
+            bGUID = true;
+        }
+
+        private void radEntry_Checked(object sender, RoutedEventArgs e)
+        {
+            // we are to create SQL script for the creature_movement_template table
+            bGUID = false;
         }
     }
 }
