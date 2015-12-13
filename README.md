@@ -12,7 +12,7 @@ Programming language:
 
 WoW Addon: LUA script
 
-Convert to SQL tool: C#
+Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 
 IDE/Editors: Visual Studio 2013 and Notepad++
 
