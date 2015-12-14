@@ -204,6 +204,19 @@ namespace WoWCoordsToSQLScript
             string id = txtId.Text;
             int point = Convert.ToInt32(txtPoint.Text); // points in a path - means to know which order the entries are executed in - 1 to n
             char delimiter = txtDelimiterForSavedCSVFile.Text[0];
+            string sTableName;
+            string sGuidOrEntry;
+
+            if (bGUID) // creature_movement
+            {
+                sTableName = "creature_movement";
+                sGuidOrEntry = "id";
+            }
+            else // creature_movement_template
+            {
+                sTableName = "creature_movement_template";
+                sGuidOrEntry = "entry";
+            }
             // iterate through the ListBox, converting each entry to SQL script
             for (int i = 0; i < lbContinentCoordinates.Items.Count; i++)
             {
@@ -212,10 +225,7 @@ namespace WoWCoordsToSQLScript
 
                 componentpart = line.Split(delimiter);
                 // add it to output list
-                if (bGUID) // creature_movement
-                    sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
-                else // ENTRY - creature_movement_template
-                    sqlScript = "INSERT INTO creature_movement_template (`entry`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+                sqlScript = "INSERT INTO " + sTableName + " (" + sGuidOrEntry + ", `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
 
                 point++; // next position in the path
                 outputFileList.Add(sqlScript);
@@ -230,12 +240,9 @@ namespace WoWCoordsToSQLScript
                     
                     // split the data into its component parts - X, Y, Z, Orientation
                     componentpart = line.Split(delimiter);
-                    
+
                     // add it to output list
-                    if (bGUID) // creature_movement
-                        sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
-                    else // ENTRY - creature_movement_template
-                        sqlScript = "INSERT INTO creature_movement_template (`entry`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+                    sqlScript = "INSERT INTO " + sTableName + " (" + sGuidOrEntry + ", `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
 
                     point++; // next position in the path
                     outputFileList.Add(sqlScript);                    
