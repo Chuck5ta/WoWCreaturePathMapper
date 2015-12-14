@@ -73,6 +73,11 @@ namespace WoWCoordsToSQLScript
             txtDelimiterForLoadedCSVFile.Text = defaultConfigSettings.defaultDelimiterForCSVFileLoading;
             txtSQLScriptFileName.Text = defaultConfigSettings.defaultSQLScriptFileName;
             txtId.Text = defaultConfigSettings.defaultCreatureGUID;
+            
+            radBiDirectionalPath.IsChecked = defaultConfigSettings.defaultBiDirectionalPathCheckedState;
+            radOneDirectionPath.IsChecked = defaultConfigSettings.defaultOneDirectionPathCheckedState;            
+            radEntry.IsChecked = defaultConfigSettings.defaultEntryCheckedState;
+            radGuid.IsChecked = defaultConfigSettings.defaultGuidCheckedState;
 
             bGUID = true;
             bBirDirectionalPath = false; 
@@ -309,6 +314,10 @@ namespace WoWCoordsToSQLScript
             defaultConfigSettings.defaultCSVFileNameForSaving = txtCsvFileName.Text;
             defaultConfigSettings.defaultCSVFileNameForLoading = txtCSVFileNameToLoad.Text;
             defaultConfigSettings.defaultSQLScriptFileName = txtSQLScriptFileName.Text;
+            defaultConfigSettings.defaultBiDirectionalPathCheckedState = (bool)radBiDirectionalPath.IsChecked;
+            defaultConfigSettings.defaultOneDirectionPathCheckedState = (bool)radOneDirectionPath.IsChecked;
+            defaultConfigSettings.defaultEntryCheckedState = (bool)radEntry.IsChecked;
+            defaultConfigSettings.defaultGuidCheckedState = (bool)radGuid.IsChecked;
 
             // save - defaultSettings
             FileHandling.saveDefaultSettings("configSettings.txt", defaultConfigSettings);

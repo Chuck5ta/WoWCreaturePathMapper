@@ -86,6 +86,10 @@ namespace WoWCoordsToSQLScript
                     fileWriter.WriteLine(configSettings.defaultCSVFileNameForLoading);
                     fileWriter.WriteLine(configSettings.defaultDelimiterForCSVFileLoading);
                     fileWriter.WriteLine(configSettings.defaultSQLScriptFileName);
+                    fileWriter.WriteLine(configSettings.defaultBiDirectionalPathCheckedState);
+                    fileWriter.WriteLine(configSettings.defaultOneDirectionPathCheckedState);
+                    fileWriter.WriteLine(configSettings.defaultEntryCheckedState);
+                    fileWriter.WriteLine(configSettings.defaultGuidCheckedState);
                 }
                 fs.Close();
             }
@@ -107,22 +111,30 @@ namespace WoWCoordsToSQLScript
                 FileStream fs = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.Read);
                 using (StreamReader fileReader = new StreamReader(fs, Encoding.GetEncoding(1252)))
                 {
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultNameOfCharacter = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultCreatureGUID = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultPoint = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultCSVFileNameForSaving = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultDelimiterForCSVFileSaving = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultCSVFileNameForLoading = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultDelimiterForCSVFileLoading = fileLine;
-                        fileLine = fileReader.ReadLine();
-                        defaultConfigSettings.defaultSQLScriptFileName = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultNameOfCharacter = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultCreatureGUID = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultPoint = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultCSVFileNameForSaving = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultDelimiterForCSVFileSaving = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultCSVFileNameForLoading = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultDelimiterForCSVFileLoading = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultSQLScriptFileName = fileLine;
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultBiDirectionalPathCheckedState = Convert.ToBoolean(fileLine);
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultOneDirectionPathCheckedState = Convert.ToBoolean(fileLine);
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultEntryCheckedState = Convert.ToBoolean(fileLine);
+                    fileLine = fileReader.ReadLine();
+                    defaultConfigSettings.defaultGuidCheckedState = Convert.ToBoolean(fileLine);
                 }
                 fs.Close();
             }
@@ -138,6 +150,10 @@ namespace WoWCoordsToSQLScript
                 defaultConfigSettings.defaultCSVFileNameForLoading = "defaultCSVFileNameToLoad";
                 defaultConfigSettings.defaultDelimiterForCSVFileLoading = ",";
                 defaultConfigSettings.defaultSQLScriptFileName = "defaultSqlScriptFileName";
+                defaultConfigSettings.defaultBiDirectionalPathCheckedState = true;
+                defaultConfigSettings.defaultOneDirectionPathCheckedState = false;
+                defaultConfigSettings.defaultEntryCheckedState = false;
+                defaultConfigSettings.defaultGuidCheckedState = true;
 
             }
 

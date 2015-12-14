@@ -16,6 +16,10 @@ namespace WoWCoordsToSQLScript
         public string defaultDelimiterForCSVFileLoading;
         public string defaultCSVFileNameForLoading;
         public string defaultSQLScriptFileName;
+        public bool defaultBiDirectionalPathCheckedState;
+        public bool defaultOneDirectionPathCheckedState;
+        public bool defaultEntryCheckedState;
+        public bool defaultGuidCheckedState;
 
         // constructor
         public DefaultSettings()
@@ -29,6 +33,10 @@ namespace WoWCoordsToSQLScript
             defaultCSVFileNameForLoading = "";
             defaultDelimiterForCSVFileLoading = ",";
             defaultSQLScriptFileName = "";
+            defaultBiDirectionalPathCheckedState =  true;
+            defaultOneDirectionPathCheckedState = false;
+            defaultEntryCheckedState = true;
+            defaultGuidCheckedState = false;
         }
     }
 }
