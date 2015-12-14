@@ -105,6 +105,9 @@
         <RadioButton x:Name="radEntry" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="101,253,0,0" VerticalAlignment="Top" Checked="radEntry_Checked"/>
         <Label Content="guid" HorizontalAlignment="Left" Height="29" Margin="64,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="entry" HorizontalAlignment="Left" Height="29" Margin="61,247,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="PATH TYPE" HorizontalAlignment="Left" Margin="424,223,0,0" VerticalAlignment="Top" Width="81" FontWeight="Bold"/>
+        <RadioButton x:Name="radOneDirectionPath" GroupName="pathType" Content="one direction" HorizontalAlignment="Left" Margin="415,249,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radOneDirectionPath_Checked" />
+        <RadioButton x:Name="radBiDirectionalPath" GroupName="pathType" Content="bi-directional" HorizontalAlignment="Left" Margin="415,265,0,0" VerticalAlignment="Top" Checked="radBiDirectionalPath_Checked"/>
 
     </Grid>
 </Window>

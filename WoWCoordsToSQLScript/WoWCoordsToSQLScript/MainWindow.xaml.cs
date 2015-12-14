@@ -39,7 +39,8 @@ namespace WoWCoordsToSQLScript
     {
         private bool expandHelpPanel = true;
         private bool bGUID; // if we are using a GUID, then we are adding path data to the creature_movement table, otherwise it will be an 'entry' ID for the creature_movement_template table
-        private ArrayList logileList = new ArrayList();
+        private bool bBirDirectionalPath; // one way path (e.g. circular) or bi-directional (back and forth along the same route) ?
+        private ArrayList logfileList = new ArrayList();
         private ArrayList outputFileList = new ArrayList();
 
         private DefaultSettings defaultConfigSettings;
@@ -74,6 +75,7 @@ namespace WoWCoordsToSQLScript
             txtId.Text = defaultConfigSettings.defaultCreatureGUID;
 
             bGUID = true;
+            bBirDirectionalPath = false; 
 
         }
 
@@ -102,9 +104,9 @@ namespace WoWCoordsToSQLScript
             {
 
                 // load the log file
-                logileList = FileHandling.loadFile("WoWChatLog.txt");
+                logfileList = FileHandling.loadFile("WoWChatLog.txt");
                 // did we successfully load the data
-                if (logileList.Count > 0)
+                if (logfileList.Count > 0)
                 {
                     string xOrdinate = "";
                     string yOrdinate = "";
@@ -113,7 +115,7 @@ namespace WoWCoordsToSQLScript
                     // add to the list box
                     lbContinentCoordinates.Items.Clear(); // make sure the ListBox is empty
 
-                    foreach (object logLine in logileList)
+                    foreach (object logLine in logfileList)
                     {
                         int startIndex;
                         int endIndex;
@@ -195,6 +197,7 @@ namespace WoWCoordsToSQLScript
          */
         private void btnConvertToSql_Click(object sender, RoutedEventArgs e)
         {
+            outputFileList.Clear();
             string line;
             string[] componentpart;
             string sqlScript = "";
@@ -205,7 +208,7 @@ namespace WoWCoordsToSQLScript
             for (int i = 0; i < lbContinentCoordinates.Items.Count; i++)
             {
                 line = lbContinentCoordinates.Items[i].ToString();
-                // split the data into its component parts - X, Y, X, Orientation
+                // split the data into its component parts - X, Y, Z, Orientation
 
                 componentpart = line.Split(delimiter);
                 // add it to output list
@@ -217,6 +220,27 @@ namespace WoWCoordsToSQLScript
                 point++; // next position in the path
                 outputFileList.Add(sqlScript);
             }
+            
+            // if we want a bi-directional path (back and forth along the same route)
+            // write coordinates, from the ListBox, in reverse order
+            if (bBirDirectionalPath)
+                for (int i = lbContinentCoordinates.Items.Count-2; i >= 1; i--)
+                {
+                    line = lbContinentCoordinates.Items[i].ToString();
+                    
+                    // split the data into its component parts - X, Y, Z, Orientation
+                    componentpart = line.Split(delimiter);
+                    
+                    // add it to output list
+                    if (bGUID) // creature_movement
+                        sqlScript = "INSERT INTO creature_movement (`id`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+                    else // ENTRY - creature_movement_template
+                        sqlScript = "INSERT INTO creature_movement_template (`entry`, `point`, `position_x`, `position_y`, `position_z`, `waittime`, `script_id`, `textid1`, `textid2`, `textid3`, `textid4`, `textid5`, `emote`, `spell`, `orientation`, `model1`, `model2`) VALUES (" + id + ", " + point + ", " + componentpart[0] + ", " + componentpart[1] + ", " + componentpart[2] + ", '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
+
+                    point++; // next position in the path
+                    outputFileList.Add(sqlScript);                    
+                }                
+            
             // now save it to file
             if (txtSQLScriptFileName.Text == "")
                 FileHandling.saveData("defaultSqlScriptFileName", outputFileList);
@@ -340,6 +364,18 @@ namespace WoWCoordsToSQLScript
         {
             // we are to create SQL script for the creature_movement_template table
             bGUID = false;
+        }
+
+        private void radOneDirectionPath_Checked(object sender, RoutedEventArgs e)
+        {
+            // the creature can only walk in one direction on the path
+            bBirDirectionalPath = false;
+        }
+
+        private void radBiDirectionalPath_Checked(object sender, RoutedEventArgs e)
+        {
+            // the creature walks back and forth along the path
+            bBirDirectionalPath = true;
         }
     }
 }
