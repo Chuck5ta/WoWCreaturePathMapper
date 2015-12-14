@@ -340,7 +340,10 @@ namespace WoWCoordsToSQLScript
         {
             txtMessagePanel.Text = "(1) Use the WoW addon to acquire the waypoint data (GM mode and enter  /chatlog in chat to activate chat logging).\r\n";
             txtMessagePanel.Text += "(2) When finished plotting waypoints (log out of WoW!) - Copy the WoWChatLog.txt from WoW Logs to this tool's folder.\r\n";
-            txtMessagePanel.Text += "(3) Enter your GM character's name, Enter GUID/id of the creature, Enter the point (1 = 1st waypoint in creature_movement table), THEN hit the Grab Data button!!!";
+            txtMessagePanel.Text += "(3) Enter your GM character's name, Enter GUID/id of the creature, Enter the point (1 = 1st waypoint in creature_movement table).\r\n";
+            txtMessagePanel.Text += "(4) Choose the type of path the creature will walk.\r\n";
+            txtMessagePanel.Text += "(5) THEN hit the Grab Data button!!!.\r\n";
+            txtMessagePanel.Text += "(6) AND FINALLY convert it all to SQL script (Convert to SQL button)";
         }
 
         /*
