@@ -11,6 +11,7 @@ There are two parts to this tool:
 Programming language:
 
 WoW Addon: LUA script and XML
+####( when in-game use /coordsmap hide, /coordsmap show )
 
 Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 
