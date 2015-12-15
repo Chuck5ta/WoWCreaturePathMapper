@@ -4,10 +4,11 @@
  * Author: Chuck E
  * Date: 28th of September, 2014
  * 
- * Version: 1.0.0.0
+ * Version: 1.2.0.0
  * 
  * Inspiration for this tool:
  * LazyBot's auto mapping of the gathering/scavanging path
+ * 
  * 
  */
 
