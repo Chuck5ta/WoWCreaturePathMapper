@@ -3,7 +3,7 @@ This can be used for plotting the paths of creatures and NPCs for World of Warcr
 There are two parts to this tool:
 
 1. World of Warcraft Addon: CoordinatesRecorder
-- when in-game use **/coordsmap hide** and **/coordsmap show** 
+* when in-game use **/coordsmap hide** and **/coordsmap show** 
 2. Convert to SQL tool: WoWCoordsToSQLScript
 
 ### TOOL BUILT ON/WITH
