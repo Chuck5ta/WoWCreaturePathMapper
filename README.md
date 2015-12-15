@@ -3,20 +3,20 @@ This can be used for plotting the paths of creatures and NPCs for World of Warcr
 There are two parts to this tool:
 
 1. World of Warcraft Addon: CoordinatesRecorder
+- when in-game use **/coordsmap hide** and **/coordsmap show** 
 2. Convert to SQL tool: WoWCoordsToSQLScript
 
 ### TOOL BUILT ON/WITH
 ---------------
-Programming language:
+**Programming language:**
 
 WoW Addon: LUA script and XML
-- when in-game use **/coordsmap hide** and **/coordsmap show** 
 
 Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 
-IDE/Editors: Visual Studio 2013 and Notepad++
+**IDE/Editors:** Visual Studio 2013 and Notepad++
 
-O/S: MS Windows 7
+**O/S:** MS Windows 7
 
 ### REASON FOR BEING
 ---------------
