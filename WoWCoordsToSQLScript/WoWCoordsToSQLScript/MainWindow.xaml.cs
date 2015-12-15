@@ -5,6 +5,10 @@
  * Date: 28th of September, 2014
  * 
  * Version: 1.2.0.0
+ * major change, minor change, small change, x
+ * major change (addind support for more than one O/S)
+ * minor change (new feature)
+ * small change (bug fix)
  * 
  * Inspiration for this tool:
  * LazyBot's auto mapping of the gathering/scavanging path
