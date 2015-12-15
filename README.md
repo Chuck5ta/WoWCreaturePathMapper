@@ -2,16 +2,15 @@
 This can be used for plotting the paths of creatures and NPCs for World of Warcraft private servers.
 There are two parts to this tool:
 
-1) World of Warcraft Addon: CoordinatesRecorder
-
-2) Convert to SQL tool: WoWCoordsToSQLScript
+1. World of Warcraft Addon: CoordinatesRecorder
+2. Convert to SQL tool: WoWCoordsToSQLScript
 
 ### TOOL BUILT ON/WITH
 ---------------
 Programming language:
 
 WoW Addon: LUA script and XML
-####( when in-game use /coordsmap hide, /coordsmap show )
+- when in-game use **/coordsmap hide** and **/coordsmap show** 
 
 Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 
