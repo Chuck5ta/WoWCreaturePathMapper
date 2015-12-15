@@ -1,9 +1,9 @@
 ﻿<Window x:Class="WoWCoordsToSQLScript.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="460" Width="524">
-    <Grid Height="430" VerticalAlignment="Top" Margin="0,0,0,-3">
-        <Button x:Name="btnGrabData" Content="Grab Data" HorizontalAlignment="Left" Margin="30,320,0,0" VerticalAlignment="Top" Width="66" Click="btnGrabData_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="47" RenderTransformOrigin="0.563,1.78"/>
-        <Label Content="ChuckE" HorizontalAlignment="Left" Margin="5,398,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.479,0.519" Width="71" FontFamily="Comic Sans MS" FontWeight="Bold">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="490" Width="524">
+    <Grid Height="460" VerticalAlignment="Top" Margin="0,0,0,-3">
+        <Button x:Name="btnGrabData" Content="Grab Data" HorizontalAlignment="Left" Margin="33,339,0,0" VerticalAlignment="Top" Width="66" Click="btnGrabData_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="47" RenderTransformOrigin="0.563,1.78"/>
+        <Label Content="ChuckE" HorizontalAlignment="Left" Margin="0,430,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.479,0.519" Width="71" FontFamily="Comic Sans MS" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -13,22 +13,22 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btnConvertToSql" Content="Convert To SQL" HorizontalAlignment="Left" Margin="297,364,0,0" VerticalAlignment="Top" Width="99" Click="btnConvertToSql_Click" ToolTip="Saves the file to this tool's folder"/>
+        <Button x:Name="btnConvertToSql" Content="Convert To SQL" HorizontalAlignment="Left" Margin="276,351,0,0" VerticalAlignment="Top" Width="99" Click="btnConvertToSql_Click" ToolTip="Saves the file to this tool's folder"/>
         <ListBox x:Name="lbContinentCoordinates" HorizontalAlignment="Left" Height="111" Margin="11,38,0,0" VerticalAlignment="Top" Width="486" ToolTip="Results windows"/>
         <Label Content="WoW Continent Coords to SQL Script" HorizontalAlignment="Left" Margin="119,-4,0,0" VerticalAlignment="Top" Width="287" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="btnSaveToFile" Content="Save As CSV file" HorizontalAlignment="Left" Margin="297,302,0,0" VerticalAlignment="Top" Width="99" Click="btnSaveToFile_Click" ToolTip="Saves the file to this tool's folder"/>
-        <TextBox x:Name="txtCsvFileName" HorizontalAlignment="Left" Height="23" Margin="125,301,0,0" TextWrapping="Wrap" Text="defaultCSVFileName" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txtSQLScriptFileName" HorizontalAlignment="Left" Height="23" Margin="125,363,0,0" TextWrapping="Wrap" Text="defaultSqlScriptFileName" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txtDelimiterForSavedCSVFile" HorizontalAlignment="Left" Height="23" Margin="408,303,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.478" MaxLength="1" FontWeight="Bold" FontFamily="Verdana" UndoLimit="20" FontSize="14" ToolTip="Enter you choice of delimiter"/>
-        <Label Content="delimiter" HorizontalAlignment="Left" Margin="433,307,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtGMCharactersName" HorizontalAlignment="Left" Height="23" Margin="125,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" ToolTip="Enter you character's name here."/>
-        <Label Content="Your character's name" HorizontalAlignment="Left" Margin="254,211,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold"/>
+        <Button x:Name="btnSaveToFile" Content="Save As CSV file" HorizontalAlignment="Left" Margin="245,487,0,-49" VerticalAlignment="Top" Width="99" Click="btnSaveToFile_Click" ToolTip="Saves the file with the delimiter separated contents."/>
+        <TextBox x:Name="txtCsvFileName" HorizontalAlignment="Left" Height="23" Margin="73,486,0,-49" TextWrapping="Wrap" Text="defaultCSVFileName" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtSQLScriptFileName" HorizontalAlignment="Left" Height="23" Margin="109,351,0,0" TextWrapping="Wrap" Text="defaultSqlScriptFileName" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtDelimiterForSavedCSVFile" HorizontalAlignment="Left" Height="23" Margin="356,486,0,-49" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.478" MaxLength="1" FontWeight="Bold" FontFamily="Verdana" UndoLimit="20" FontSize="14" ToolTip="Enter you choice of delimiter"/>
+        <Label Content="delimiter" HorizontalAlignment="Left" Margin="381,490,0,-56" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtGMCharactersName" HorizontalAlignment="Left" Height="23" Margin="125,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" ToolTip="Enter you character's name here."/>
+        <Label Content="Your character's name" HorizontalAlignment="Left" Margin="254,232,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold"/>
         <Label Content="(for the creature__movement and creature__movement__template tables)" HorizontalAlignment="Left" Margin="56,12,0,0" VerticalAlignment="Top" Width="397"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="20" Margin="127,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" ToolTip="GUID of the creature/NPC. Located in: creature table (field: GUID) creature__movement table (field: ID)"/>
-        <Label Content="guid or entry ID of creature/NPC" HorizontalAlignment="Left" Height="29" Margin="180,240,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="txtPoint" HorizontalAlignment="Left" Height="20" Margin="127,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" ToolTip="Index of the position this set of waypoints starts from, e.g. 1 if the very first entry, 2 if the 2nd entry, 5 if the 5th entry, etc" Text="1" LostFocus="txtPoint_LostFocus"/>
-        <Label Content="point (start index in the table)" HorizontalAlignment="Left" Height="30" Margin="159,265,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnSaveDefaultSettings" Content="Save As Default Settings" HorizontalAlignment="Left" Margin="176,397,0,0" VerticalAlignment="Top" Width="141" ToolTip="configSettings.txt" RenderTransformOrigin="0.5,0.5" Click="btnSaveDefaultSettings_Click">
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="20" Margin="127,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" ToolTip="GUID or entry ID of the creature/NPC."/>
+        <Label Content="guid or entry ID of creature/NPC" HorizontalAlignment="Left" Height="29" Margin="180,269,0,0" VerticalAlignment="Top" FontWeight="Bold" ToolTip="GUID or entry ID of the creature/NPC."/>
+        <TextBox x:Name="txtPoint" HorizontalAlignment="Left" Height="20" Margin="127,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" ToolTip="Index of the position this set of waypoints starts from, e.g. 1 if the very first entry, 2 if the 2nd entry, 5 if the 5th entry, etc" Text="1" LostFocus="txtPoint_LostFocus"/>
+        <Label Content="point (start index in the table)" HorizontalAlignment="Left" Height="30" Margin="159,303,0,0" VerticalAlignment="Top" FontWeight="Bold" ToolTip="Index of the position this set of waypoints starts from, e.g. 1 if the very first entry, 2 if the 2nd entry, 5 if the 5th entry, etc"/>
+        <Button x:Name="btnSaveDefaultSettings" Content="Save As Default Settings" HorizontalAlignment="Left" Margin="176,419,0,0" VerticalAlignment="Top" Width="141" ToolTip="configSettings.txt" RenderTransformOrigin="0.5,0.5" Click="btnSaveDefaultSettings_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,13 +38,13 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox x:Name="txtMessagePanel" HorizontalAlignment="Left" Height="50" Margin="12,154,0,0" TextWrapping="Wrap" Text="(1) Use the WoW addon to acquire the waypoint data (GM mode and enter  /chatlog in chat to activate chat logging). (2) When finished plotting waypoints (log out of WoW!) - Copy the WoWChatLog.txt from WoW Logs to this tool's folder. (3) Enter your GM character's name, Enter GUID/id of the creature, Enter the point (1 = 1st waypoint in creature_movement table), Choose the type of path taken, THEN hit the Grab Data button!!!" VerticalAlignment="Top" Width="485" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="2" Background="#FFF1EFEF"/>
-        <Button x:Name="btnLoadCSVFile" Content="Load CSV file" HorizontalAlignment="Left" Margin="297,333,0,0" VerticalAlignment="Top" Width="99" ToolTip="Saves the file to this tool's folder" Click="btnLoadCSVFile_Click"/>
-        <TextBox x:Name="txtCSVFileNameToLoad" HorizontalAlignment="Left" Height="23" Margin="125,332,0,0" TextWrapping="Wrap" Text="defaultCSVFileNameToLoad" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="txtDelimiterForLoadedCSVFile" HorizontalAlignment="Left" Height="23" Margin="408,333,0,0" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.478" MaxLength="1" FontWeight="Bold" FontFamily="Verdana" UndoLimit="20" FontSize="14" ToolTip="Enter the delimiter used in the file to be loaded"/>
-        <Label Content="Loaded file's" HorizontalAlignment="Left" Margin="432,326,0,0" VerticalAlignment="Top"/>
-        <Label Content="delimiter" HorizontalAlignment="Left" Margin="433,338,0,0" VerticalAlignment="Top"/>
-        <Label Content="Saved file's" HorizontalAlignment="Left" Margin="433,295,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMessagePanel" HorizontalAlignment="Left" Height="57" Margin="12,154,0,0" TextWrapping="Wrap" Text="(1) Use the WoW addon to acquire the waypoint data (GM mode and enter  /chatlog in chat to activate chat logging). (2) When finished plotting waypoints (log out of WoW!) - Copy the WoWChatLog.txt from WoW Logs to this tool's folder. (3) Enter your GM character's name, Enter GUID/id of the creature, Enter the point (1 = 1st waypoint in creature_movement table), Choose the type of path taken, THEN hit the Grab Data button!!!" VerticalAlignment="Top" Width="485" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="2" Background="#FFF1EFEF"/>
+        <Button x:Name="btnLoadCSVFile" Content="Load CSV file" HorizontalAlignment="Left" Margin="245,516,0,-78" VerticalAlignment="Top" Width="99" ToolTip="Load an exisitng file that has delimiter separated contents." Click="btnLoadCSVFile_Click"/>
+        <TextBox x:Name="txtCSVFileNameToLoad" HorizontalAlignment="Left" Height="23" Margin="73,515,0,-78" TextWrapping="Wrap" Text="defaultCSVFileNameToLoad" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="txtDelimiterForLoadedCSVFile" HorizontalAlignment="Left" Height="23" Margin="356,516,0,-79" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.519,0.478" MaxLength="1" FontWeight="Bold" FontFamily="Verdana" UndoLimit="20" FontSize="14" ToolTip="Enter the delimiter used in the file to be loaded"/>
+        <Label Content="Loaded file's" HorizontalAlignment="Left" Margin="380,509,0,-75" VerticalAlignment="Top"/>
+        <Label Content="delimiter" HorizontalAlignment="Left" Margin="381,521,0,-87" VerticalAlignment="Top"/>
+        <Label Content="Saved file's" HorizontalAlignment="Left" Margin="381,478,0,-44" VerticalAlignment="Top"/>
         <Button x:Name="btnHelpMe" Content="Help &gt;" HorizontalAlignment="Left" Margin="439,4,0,0" VerticalAlignment="Top" Width="66" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="25" Click="btnHelpMe_Click" FontWeight="Bold"/>
         <RichTextBox x:Name="rtbHelpInformation" HorizontalAlignment="Left" Height="386" Margin="521,12,-356,0" VerticalAlignment="Top" Width="351" VerticalScrollBarVisibility="Visible">
             <RichTextBox.Resources>
@@ -102,14 +102,16 @@
                 <Paragraph FontSize="14">That's All Folks!</Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="btnWTF" Content="WTF!!!" HorizontalAlignment="Left" Margin="29,209,0,0" VerticalAlignment="Top" Width="45" Click="btnWTF_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="25" FontSize="10" FontWeight="Bold"/>
-        <RadioButton x:Name="radGuid" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="101,237,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radGuid_Checked"/>
-        <RadioButton x:Name="radEntry" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="101,253,0,0" VerticalAlignment="Top" Checked="radEntry_Checked"/>
-        <Label Content="guid" HorizontalAlignment="Left" Height="29" Margin="64,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="entry" HorizontalAlignment="Left" Height="29" Margin="61,247,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="PATH TYPE" HorizontalAlignment="Left" Margin="424,223,0,0" VerticalAlignment="Top" Width="81" FontWeight="Bold"/>
-        <RadioButton x:Name="radOneDirectionPath" GroupName="pathType" Content="one direction" HorizontalAlignment="Left" Margin="415,249,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radOneDirectionPath_Checked" />
-        <RadioButton x:Name="radBiDirectionalPath" GroupName="pathType" Content="bi-directional" HorizontalAlignment="Left" Margin="415,265,0,0" VerticalAlignment="Top" Checked="radBiDirectionalPath_Checked"/>
+        <Button x:Name="btnWTF" Content="WTF!!!" HorizontalAlignment="Left" Margin="17,216,0,0" VerticalAlignment="Top" Width="45" Click="btnWTF_Click" ToolTip="Load WoW's log file: WoWChatLog.txt" Height="25" FontSize="10" FontWeight="Bold"/>
+        <RadioButton x:Name="radGuid" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="103,266,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radGuid_Checked" ToolTip="creature_movement table"/>
+        <RadioButton x:Name="radEntry" GroupName="guidOrEntry" Content="" HorizontalAlignment="Left" Margin="103,282,0,0" VerticalAlignment="Top" Checked="radEntry_Checked" ToolTip="creature_movement_template table"/>
+        <Label Content="guid" HorizontalAlignment="Left" Height="29" Margin="66,259,0,0" VerticalAlignment="Top" FontWeight="Bold" ToolTip="creature_movement table"/>
+        <Label Content="entry" HorizontalAlignment="Left" Height="29" Margin="63,276,0,0" VerticalAlignment="Top" FontWeight="Bold" ToolTip="creature_movement_template table"/>
+        <Label Content="PATH TYPE" HorizontalAlignment="Left" Margin="424,244,0,0" VerticalAlignment="Top" Width="81" FontWeight="Bold" ToolTip="Choose to have the creature move only in one direction on the path, such as a circle, or bidirectional, going back and forth along the path."/>
+        <RadioButton x:Name="radOneDirectionPath" GroupName="pathType" Content="one direction" HorizontalAlignment="Left" Margin="415,270,0,0" VerticalAlignment="Top" IsChecked="True" Checked="radOneDirectionPath_Checked" ToolTip="The creature can only move in one direction on the path." />
+        <RadioButton x:Name="radBiDirectionalPath" GroupName="pathType" Content="bi-directional" HorizontalAlignment="Left" Margin="415,286,0,0" VerticalAlignment="Top" Checked="radBiDirectionalPath_Checked" ToolTip="The creature can move back and forth along the path."/>
+        <Button x:Name="btnDelimiterConversion" Content="\/ Delimiter conversion \/" HorizontalAlignment="Left" Margin="365,430,0,0" VerticalAlignment="Top" Width="140" ToolTip="Convert files to delimer of choice." Height="19" Click="btnDelimiterConversion_Click" FontWeight="Bold" FontSize="10"/>
+        <Label Content="Delimiter Conversion Tool" HorizontalAlignment="Left" Margin="164,454,0,-20" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="14"/>
 
     </Grid>
 </Window>

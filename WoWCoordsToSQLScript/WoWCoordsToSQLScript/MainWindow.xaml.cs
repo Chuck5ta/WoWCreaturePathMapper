@@ -38,6 +38,7 @@ namespace WoWCoordsToSQLScript
     public partial class MainWindow : Window
     {
         private bool expandHelpPanel = true;
+        private bool expandDelimiterToolPanel = true;
         private bool bGUID; // if we are using a GUID, then we are adding path data to the creature_movement table, otherwise it will be an 'entry' ID for the creature_movement_template table
         private bool bBirDirectionalPath; // one way path (e.g. circular) or bi-directional (back and forth along the same route) ?
         private ArrayList logfileList = new ArrayList();
@@ -395,6 +396,22 @@ namespace WoWCoordsToSQLScript
         {
             // the creature walks back and forth along the path
             bBirDirectionalPath = true;
+        }
+
+        private void btnDelimiterConversion_Click(object sender, RoutedEventArgs e)
+        {
+            if (expandDelimiterToolPanel)
+            {
+                this.Height = 600;
+                btnDelimiterConversion.Content = "/\\ Close /\\";
+                expandDelimiterToolPanel = false;
+            }
+            else
+            {
+                this.Height = 490;
+                btnDelimiterConversion.Content = "\\/ Delimiter conversion \\/";
+                expandDelimiterToolPanel = true;
+            }
         }
     }
 }
