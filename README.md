@@ -8,9 +8,9 @@ There are two parts to this tool:
 
 ### TOOL BUILT ON/WITH
 ---------------
-**Programming language:**
+**Programming language(s):**
 
-WoW Addon: LUA script and XML
+WoW Addon: LUA and XML script
 
 Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 
@@ -21,8 +21,8 @@ Convert to SQL tool: C#, WPF (Windows Presentation Foundation)
 ### REASON FOR BEING
 ---------------
 Plotting paths for creatures and NPCs in World of Warcraft can be a time consuming and very, very mundane experience, 
-so I decided to create a tool to significantly improve the situation.
+therefore I decided to create a tool to significantly improve the situation.
 
 Now, with this tool, you can move freely along the path you wish to set out for the creature or NPC, clicking on a 
-button as you go to record the points of the path. Then once done, you just load it up into the to SQL converter to
-create script that can be used to update the relevant table for creature movement (e.g. MaNGOS: creature_movement).
+button as you go, in order to record the points of the path. Then once done, you just load it up into the SQL converter to
+create the script that can be used to update the relevant table for creature movement (e.g. MaNGOS: creature_movement).
