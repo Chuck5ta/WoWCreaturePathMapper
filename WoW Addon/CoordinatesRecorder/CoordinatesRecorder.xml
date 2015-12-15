@@ -25,7 +25,15 @@
 		<Layers>
 			<Layer>
 				<FontString name="FontString1" inherits="GameFontNormalSmall" font="Fonts\FRIZQT__.TTF" text="Chuck E's WoW Coordinates Recorder">
-					<Size x="160" y="36" />
+					<Size x="160" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="5" y="-15" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="FontString2" inherits="GameFontNormalSmall" font="Fonts\FRIZQT__.TTF" text="(/coordsmap show or /coordsmap hide)">
+                    <Size x="160" y="45" />                    
 					<Anchors>
 						<Anchor point="TOPLEFT">
 							<Offset x="5" y="-15" />
@@ -59,8 +67,5 @@
 			</Button>
 		</Frames>
 	</Frame>
-	
-	
-
 
 </Ui>

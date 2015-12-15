@@ -6,8 +6,18 @@ local myName = UnitName("player")
 
 messageRead = "false"
 
+-- Slash command to show or hide the addon's interface in-game
+SLASH_COORDSMAPPER1 = '/coordsmap';
+function SlashCmdList.COORDSMAPPER(msg, editbox)
+  if msg == 'show' then
+    Frame1:Show();
+  else
+    Frame1:Hide();    
+  end
+end
+
 function Frame1_OnLoad()
-    --put your event handler logic here
+
 	this:RegisterEvent("CHAT_MSG_SYSTEM")	
 end
 
@@ -67,7 +77,6 @@ function getCoords(arg1)
 end
 
 function Frame1_OnEvent()
-    --put your event handler logic here
 	-- react to a system level message (yellow text)
 	if event == "CHAT_MSG_SYSTEM" and messageRead == "false" then
 		messageRead = "true"
