@@ -141,36 +141,39 @@ namespace WoWCoordsToSQLScript
                             endIndex = text.IndexOf("XEnd");
                             // grab the data (X ordinate)
                             numberOfChars = endIndex - startIndex - 1;
-                            xOrdinate = text.Substring(startIndex, numberOfChars);
-                            xOrdinate.Replace(" ", string.Empty);
-                            // lbContinentCoordinates.Items.Add(logLine);
+                            if (numberOfChars>0)
+                            {
+                                xOrdinate = text.Substring(startIndex, numberOfChars);
+                                xOrdinate.Replace(" ", string.Empty);
+                                // lbContinentCoordinates.Items.Add(logLine);
 
-                            // Y ordinate
-                            startIndex = text.IndexOf("YStart") + 6;
-                            endIndex = text.IndexOf("YEnd");
-                            // grab the data (Y ordinate)
-                            numberOfChars = endIndex - startIndex - 1;
-                            yOrdinate = text.Substring(startIndex, numberOfChars);
-                            yOrdinate.Replace(" ", string.Empty);
+                                // Y ordinate
+                                startIndex = text.IndexOf("YStart") + 6;
+                                endIndex = text.IndexOf("YEnd");
+                                // grab the data (Y ordinate)
+                                numberOfChars = endIndex - startIndex - 1;
+                                yOrdinate = text.Substring(startIndex, numberOfChars);
+                                yOrdinate.Replace(" ", string.Empty);
 
-                            // Z ordinate
-                            startIndex = text.IndexOf("ZStart") + 6;
-                            endIndex = text.IndexOf("ZEnd");
-                            // grab the data (Z ordinate)
-                            numberOfChars = endIndex - startIndex - 1;
-                            zOrdinate = text.Substring(startIndex, numberOfChars);
-                            zOrdinate.Replace(" ", "");
+                                // Z ordinate
+                                startIndex = text.IndexOf("ZStart") + 6;
+                                endIndex = text.IndexOf("ZEnd");
+                                // grab the data (Z ordinate)
+                                numberOfChars = endIndex - startIndex - 1;
+                                zOrdinate = text.Substring(startIndex, numberOfChars);
+                                zOrdinate.Replace(" ", "");
 
-                            // Orientation - remove for now, as too many of these made the animation look very jerky
-                            /*
-                            startIndex = text.IndexOf("OStart") + 6;
-                            endIndex = text.IndexOf("OEnd");
-                            // grab the data (orientation)
-                            numberOfChars = endIndex - startIndex - 1;
-                            orientation = text.Substring(startIndex, numberOfChars);
-                             */
+                                // Orientation - remove for now, as too many of these made the animation look very jerky
+                                /*
+                                startIndex = text.IndexOf("OStart") + 6;
+                                endIndex = text.IndexOf("OEnd");
+                                // grab the data (orientation)
+                                numberOfChars = endIndex - startIndex - 1;
+                                orientation = text.Substring(startIndex, numberOfChars);
+                                 */
 
-                            lbContinentCoordinates.Items.Add(xOrdinate + delimiter + yOrdinate + delimiter + zOrdinate);
+                                lbContinentCoordinates.Items.Add(xOrdinate + delimiter + yOrdinate + delimiter + zOrdinate);
+                            }
                         }
 
                         txtMessagePanel.Text = "Job done :-)";
